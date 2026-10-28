@@ -1,0 +1,59 @@
+# Build outputs
+**/build/
+**/dist/
+**/out/
+**/target/
+**/*.jar
+!**/src/**/dist/**
+**/*.log
+**/.gradle/
+**/node_modules/
+**/.next/
+**/.nuxt/
+**/.vite-cache/
+**/.turbo/
+**/.parcel-cache/
+
+# Environment & secrets
+**/.env
+**/.env.*
+!**/.env.example
+**/.env.local
+**/.env.production
+**/secrets/
+**/credentials/
+**/*.pem
+**/*.key
+**/*.p12
+**/*.jks
+**/keystore/
+
+# IDE & OS
+**/.idea/
+**/.vscode/
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
+
+# D1 / Cloudflare
+**/.wrangler/
+**/.mf/
+**/wrangler.toml
+**/wrangler.jsonc
+!**/wrangler.example.jsonc
+**/dev.db
+**/dev.db-*
+
+# Testing & coverage
+**/coverage/
+**/.coverage
+**/htmlcov/
+**/test-results/
+**/pytest-cache/
+**/jest-cache/
+
+# Misc
+**/*.bak
+**/*.tmp
+**/*.swp
+**/.cache/plugin/gradle/gradle-8.6-bin.zip
