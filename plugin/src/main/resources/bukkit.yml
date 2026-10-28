@@ -1,0 +1,9 @@
+name: 'OrigEssentials'
+version: '0.1.0-SNAPSHOT'
+main: 'com.origessentials.plugin.OrigEssentialsPlugin'
+authors: ['OrigEssentials Team']
+description: 'Minecraft 伺服器管理插件'
+api-version: '1.20'
+load: STARTUP
+softdepend: ['Purpur']
+folia-supported: true

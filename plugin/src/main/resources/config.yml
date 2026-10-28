@@ -1,0 +1,130 @@
+# OrigEssentials 設定檔
+# =====================
+# 此檔案位於伺服器 plugins/OrigEssentials/config.yml
+# 修改後執行 /origreload 套用（部分需重啟）
+# WARNING: 請勿提交含真實憑證的設定檔至 Git
+
+# ── 一般設定 ──────────────────────────────────────────
+general:
+  # 語言設定（僅支援 zh_TW，後續可擴充）
+  language: "zh_TW"
+  # 除錯模式（輸出詳細日誌，production 應設為 false）
+  debug: false
+  # 更新檢查（檢查新版並通知管理員）
+  check-updates: true
+  # Metrics 上傳（預設關閉，啟用前請閱讀文件）
+  metrics: false
+
+# ── 儲存設定 ──────────────────────────────────────────
+storage:
+  # 資料庫類型（僅支援 sqlite）
+  type: "sqlite"
+  sqlite:
+    # 資料庫檔名（相對於插件資料夾）
+    file: "data.db"
+    # SQLite busy timeout（毫秒）
+    busy-timeout-ms: 5000
+
+# ── 安全設定 ──────────────────────────────────────────
+security:
+  # 日誌中遮蔽敏感資訊（API Key、Token 等）
+  redact-secrets-in-logs: true
+  # 拒絕無效 TLS 憑證（production 不得設為 false）
+  reject-invalid-tls: true
+  # 允許 HTTP 降級（production 必須為 false）
+  allow-http: false
+  # 最大輸入長度（字元），防止巨型請求
+  max-input-length: 2048
+  # 最大回應大小（位元組），防止記憶體耗盡
+  max-response-bytes: 1048576
+
+# ── Web 面板連線設定 ────────────────────────────────────
+web-panel:
+  # 是否啟用 Web 面板連線
+  # false: 完全停用所有連線、輪詢、遠端操作接收
+  # true:  啟用所有功能（需填寫下方必要欄位）
+  enabled: false
+
+  # Web 面板 API 基礎位址（HTTPS）
+  # 範例: https://panel.example.com
+  api-endpoint: ""
+
+  # API 路徑前綴
+  api-base-path: "/api/v1"
+
+  # 伺服器外部識別碼（由託管商或後端提供）
+  server-id: ""
+
+  # 配對金鑰（配對成功後由後端自動填入，勿手動填寫）
+  pairing-key: ""
+
+  # API Key（配對成功後由後端發放，勿手動填寫）
+  api-key: ""
+
+  # 連線參數
+  connection:
+    # 輪詢間隔（秒），插件定期向後端請求待執行工作
+    poll-interval: 10
+    # 請求超時（毫秒）
+    timeout: 10000
+    # 是否自動重連
+    auto-reconnect: true
+    # 最大重試次數（-1 表示無限）
+    max-retries: 5
+    # 退避最大間隔（秒）
+    backoff-max-seconds: 300
+
+  # 安全閥門：哪些遠端操作允許執行
+  # 所有選項預設關閉，需管理員明確授權
+  security:
+    allow-remote-actions: false
+    allow-player-data-read: false
+    allow-file-management: false
+    allow-console-commands: false
+
+  # 輪詢策略
+  polling:
+    # 每次最多取得工作數
+    max-jobs-per-poll: 5
+
+# ── UUID 綁定設定 ─────────────────────────────────────
+binding:
+  # 是否啟用綁定功能
+  enabled: true
+  # 綁定碼長度（4-64 位數字）
+  code-length: 8
+  # 綁定碼有效期（秒），預設 5 分鐘
+  expiry-seconds: 300
+  # 是否一次性使用
+  one-time-use: true
+
+# ── 指令設定 ──────────────────────────────────────────
+commands:
+  pl:
+    # 是否啟用 /pl 彩蛋
+    enabled: true
+    # 顯示訊息
+    message: "&c偷看？戳瞎你"
+    # 附加效果（全部預設關閉）
+    effects:
+      nausea:
+        enabled: false
+        duration-ticks: 60
+        amplifier: 0
+      blindness:
+        enabled: false
+        duration-ticks: 40
+        amplifier: 0
+      slowness:
+        enabled: false
+        duration-ticks: 40
+        amplifier: 0
+
+# ── 診斷設定 ──────────────────────────────────────────
+diagnostics:
+  # 診斷時顯示伺服器版本
+  include-server-version: true
+  # 診斷時顯示插件版本
+  include-plugin-version: true
+  # 診斷時包含堆疊追蹤（production 應為 false）
+  include-stack-trace: false

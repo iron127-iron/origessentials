@@ -1,0 +1,78 @@
+# ORIGESSENTIALS 語言檔（繁體中文）
+# =================================
+# 
+# 此檔案定義所有玩家可見的文字訊息。
+# 使用 {0}, {1}, ... 作為站位符號。
+# 
+# 站位符號對應：
+#   {0} - 第一個參數
+#   {1} - 第二個參數
+#   %s  - 可選字串替換
+
+# ── 通用訊息 ────────────────────────────────────────
+prefix: "&6&l[OrigEssentials] &r"
+permission-denied: "&c你沒有權限執行此指令。"
+player-only: "&c只有玩家可以使用此指令。"
+console-only: "&c只有控制台可以使用此指令。"
+reload-success: "&a配置已重新載入。"
+reload-failed: "&c重新載入失敗，請檢查日誌。"
+
+# ── 狀態訊息 ────────────────────────────────────────
+status-online: "&a在線"
+status-offline: "&c離線"
+status-starting: "&e啟動中..."
+status-stopping: "&6停止中..."
+status-error: "&c錯誤"
+
+# ── /orig 指令 ──────────────────────────────────────
+orig-help-header: "&6&l═══ OrigEssentials 說明 ═══"
+orig-help-command: "  &f/{0} &7- &e{1}"
+orig-help-footer: "&6&l═══════════════════════"
+
+orig-status-header: "&6&l═══ 插件狀態 ═══"
+orig-status-version: "  版本: &f{0}"
+orig-status-loaded: "  已載入: &a{0}"
+orig-status-web-enabled: "  Web 連線: &a{0}"
+orig-status-web-url: "  API 位址: &f{0}"
+orig-status-server-id: "  伺服器 ID: &f{0}"
+orig-status-paired: "  已配對: &a{0}"
+orig-status-footer: "&6&l════"
+
+orig-reload-header: "&6&l═══ 重新載入 ═══"
+orig-reload-reloading: "  正在重新載入設定..."
+orig-reload-done: "  重新載入完成。"
+orig-reload-footer: "&6&l════"
+
+orig-pair-header: "&6&l═══ 配對流程 ═══"
+orig-pair-requesting: "  正在發送配對請求..."
+orig-pair-success: "  配對成功！已連線至 Web 面板。"
+orig-pair-failed: "  配對失敗: &c{0}"
+orig-pair-invalid-code: "  配對碼無效或已過期。"
+orig-pair-already-paired: "  此伺服器已配對，請先解除配對。"
+orig-pair-footer: "&6&l════"
+
+orig-unpair-header: "&6&l═══ 解除配對 ═══"
+orig-unpair-requesting: "  正在發送解除配對請求..."
+orig-unpair-success: "  已解除配對。Web 連線已終止。"
+orig-unpair-failed: "  解除配對失敗: &c{0}"
+orig-unpair-not-paired: "  此伺服器尚未配對。"
+orig-unpair-footer: "&6&l════"
+
+orig-debug-header: "&6&l═══ 診斷資訊 ═══"
+orig-debug-secret-filtered: "  (敏感資訊已過濾)"
+orig-debug-footer: "&6&l════"
+
+# ── /orig bind 指令 ────────────────────────────────
+orig-bind-request-code: "&e請在遊戲內執行 /orig bind <驗證碼> 完成綁定。"
+orig-bind-success: "&a已成功綁定 Minecraft 帳號: &f{0}"
+orig-bind-failed: "&c綁定失敗: &f{0}"
+orig-bind-invalid-code: "&c驗證碼無效或已過期。"
+orig-bind-already-bound: "&c此 Minecraft 帳號已綁定至其他帳號。"
+orig-bind-footer: "&6&l════"
+
+# ── 配對錯誤訊息 ────────────────────────────────────
+error-api-unreachable: "&c無法連線至 Web 面板，請稍後再試。"
+error-timeout: "&c請求超時，請檢查網路連線。"
+error-invalid-response: "&c收到無效的伺服器回應。"
+error-rate-limit: "&c請求過於頻繁，請稍後再試。"
+error-server-offline: "&cMinecraft 伺服器已離線，無法執行此操作。"

@@ -1,0 +1,104 @@
+# OrigEssentials 語言檔（繁體中文）
+# =================================
+# 所有玩家可見文字集中在此檔。
+# 使用 & 顏色碼及 {n} / %n% 站位符號。
+
+prefix: "&8[&bOrigEssentials&8] "
+
+# ── 通用訊息 ──────────────────────────────────────────
+general:
+  no_permission: "&c你沒有權限執行此操作。"
+  player_only: "&c此指令只能由玩家執行。"
+  console_only: "&c此指令只能由控制台執行。"
+  invalid_args: "&c參數錯誤，請使用正確的指令格式。"
+  internal_error: "&c操作失敗，請查看伺服器日誌。"
+  unknown_player: "&c找不到該玩家。"
+
+# ── 指令訊息 ──────────────────────────────────────────
+command:
+  help:
+    title: "&b═══ OrigEssentials 說明 ═══"
+    list_orig: "  &f/orig [指令] &7- 主要指令"
+    list_version: "  &f/orig version &7- 查看版本資訊"
+    list_status: "  &f/orig status &7- 查看插件狀態"
+    list_reload: "  &f/orig reload &7- 重新載入設定"
+    list_debug: "  &f/orig debug &7- 輸出診斷資訊"
+    list_pair: "  &f/orig pair <碼> &7- 配對 Web 面板"
+    list_bind: "  &f/orig bind confirm <碼> &7- 綁定 Minecraft UUID"
+    list_unpair: "  &f/orig unpair &7- 解除配對"
+    list_web: "  &f/orig web [reconnect] &7- Web 連線管理"
+    list_pl: "  &f/orig pl &7- ??? 彩蛋指令"
+  version:
+    title: "&b═══ 版本資訊 ═══"
+    plugin: "  插件版本: &f{0}"
+    minecraft: "  Minecraft: &f{0}"
+    java: "  Java: &f{0}"
+  status:
+    title: "&b═══ 插件狀態 ═══"
+    plugin: "  插件版本: &f{0}"
+    web: "  Web 連線: &f{0}"
+    last_hb: "  最後心跳: &f{0}"
+    players: "  線上玩家: &f{0}/{1}"
+    bindings: "  UUID 綁定: &f{0}"
+  reload:
+    success: "&a設定已重新載入。"
+    failed: "&c設定載入失敗，已保留原有設定。"
+  debug:
+    title: "&b═══ 診斷資訊 ═══"
+  pair:
+    usage: "&c用法: /orig pair <配對碼>"
+    requesting: "&e正在發送配對請求..."
+    success: "&a配對成功！已連線至 Web 面板。"
+    failed: "&c配對失敗: &f{0}"
+    no_credential: "&c配對成功但未收到有效憑證。"
+  unpair:
+    not_paired: "&c此伺服器尚未配對。"
+    requesting: "&e正在發送解除配對請求..."
+    success: "&a已解除配對。Web 連線已終止。"
+    failed: "&c解除配對失敗: &f{0}"
+  bind:
+    usage: "&c用法: /orig bind [confirm <碼>|status|unbind]"
+    requesting_code: "&e請先在 Web 面板申請綁定碼。"
+    validating: "&e正在驗證綁定碼..."
+    not_implemented: "&e綁定功能待後端 API 部署後啟用。"
+    already_bound: "&c此帳號已綁定至其他 Web 帳號。"
+  web:
+    status: "&b═══ Web 狀態 ═══"
+    reconnecting: "&e正在嘗試重新連線..."
+    pairing_required: "&c請先完成伺服器配對。"
+
+# ── 綁定訊息 ──────────────────────────────────────────
+binding:
+  disabled: "&c玩家綁定功能目前已停用。"
+  invalid_code: "&c驗證碼無效或不存在。"
+  expired_code: "&c驗證碼已過期。"
+  already_used: "&c驗證碼已經使用。"
+  success: "&a帳號綁定成功。"
+  unbound: "&a帳號已解除綁定。"
+  not_implemented: "&e綁定功能需要後端 API 部署後才能使用。"
+  status:
+    bound: "&a已綁定至 Web 帳號: &f{0}..."
+    unbound: "&7尚未綁定任何 Web 帳號。"
+
+# ── Web 連線訊息 ──────────────────────────────────────
+web:
+  disabled: "&eWeb 面板整合目前未啟用。"
+  connected: "&a已連接後端 API。"
+  disconnected: "&c目前無法連接後端 API。"
+  reconnecting: "&e正在嘗試重新連線。"
+  pairing_required: "&c請先完成伺服器配對。"
+  invalid_response: "&c後端回應無效。"
+  timeout: "&c請求超時，請稍後再試。"
+  rate_limited: "&c操作過於頻繁，請稍後再試。"
+
+# ── 彩蛋訊息 ──────────────────────────────────────────
+pl:
+  message: "&c偷看？戳瞎你！"
+
+# ── 錯誤訊息 ──────────────────────────────────────────
+errors:
+  database: "&c資料庫操作失敗，請查看日誌。"
+  timeout: "&c請求超時，請稍後再試。"
+  rate_limited: "&c操作過於頻繁，請稍後再試。"
+  tls_error: "&cTLS 憑證驗證失敗，請檢查 API 位址。"
+  connection_refused: "&c無法連線至後端，請檢查網路設定。"

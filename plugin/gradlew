@@ -1,0 +1,14 @@
+#!/bin/sh
+# Gradle Wrapper Script for Windows/Linux
+# 使用本地安裝的 Gradle 8.6
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+GRADLE_HOME="$SCRIPT_DIR/gradle/wrapper/gradle-8.6"
+
+if [ ! -f "$GRADLE_HOME/bin/gradle" ]; then
+    echo "Gradle 8.6 not found at $GRADLE_HOME"
+    exit 1
+fi
+
+export GRADLE_HOME
+exec "$GRADLE_HOME/bin/gradle" "$@"

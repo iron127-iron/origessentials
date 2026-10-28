@@ -1,0 +1,106 @@
+apiVersion: 2
+name: OrigEssentials
+description: "Minecraft 伺服器管理插件 - 整合 Web 面板、UUID 綁定及遠端工作"
+main: cc.origessentials.OrigEssentialsPlugin
+version: "${version}"
+folia-supported: true
+authors: [OrigEssentials Team]
+website: https://origessentials.dev
+docs: https://docs.origessentials.dev
+
+commands:
+  orig:
+    description: "OrigEssentials 主指令，顯示幫助"
+    usage: "/orig [help|version|status|reload|debug|pair|unpair|bind|web|pl]"
+    aliases: [oe, origessentials]
+    permission: "origessentials.command.orig"
+
+  origstatus:
+    description: "查看插件狀態"
+    aliases: [oestatus]
+    permission: "origessentials.command.status"
+
+  origreload:
+    description: "重新載入設定"
+    aliases: [oereload]
+    permission: "origessentials.command.reload"
+
+  origpair:
+    description: "配對 Web 面板"
+    usage: "/origpair <配對碼>"
+    permission: "origessentials.command.pair"
+
+  origunpair:
+    description: "解除配對"
+    permission: "origessentials.command.unpair"
+
+  origdebug:
+    description: "輸出診斷資訊（過濾敏感資料）"
+    permission: "origessentials.command.debug"
+
+  origbind:
+    description: "Minecraft UUID 綁定管理"
+    usage: "/origbind [confirm <code>|status|unbind]"
+    permission: "origessentials.command.bind"
+
+  origweb:
+    description: "Web 連線狀態及重連"
+    usage: "/origweb [reconnect]"
+    permission: "origessentials.command.web"
+
+  oe:
+    description: "OrigEssentials 別名"
+    permission: "origessentials.command.orig"
+
+permissions:
+  origessentials.command.orig:
+    description: "使用主指令"
+    default: true
+  origessentials.command.help:
+    description: "查看說明"
+    default: true
+  origessentials.command.version:
+    description: "查看版本"
+    default: true
+  origessentials.command.status:
+    description: "查看狀態"
+    default: true
+  origessentials.command.reload:
+    description: "重新載入設定"
+    default: op perms
+  origessentials.command.debug:
+    description: "輸出診斷"
+    default: op perms
+  origessentials.command.pair:
+    description: "配對 Web 面板"
+    default: op perms
+  origessentials.command.unpair:
+    description: "解除配對"
+    default: op perms
+  origessentials.command.bind:
+    description: "UUID 綁定"
+    default: true
+  origessentials.command.web:
+    description: "Web 連線管理"
+    default: op perms
+  origessentials.command.pl:
+    description: "使用 /pl 彩蛋"
+    default: true
+  origessentials.admin:
+    description: "管理員權限"
+    default: op perms
+  origessentials.web.connect:
+    description: "允許 Web 連線"
+    default: op perms
+  origessentials.web.remote-actions:
+    description: "允許遠端操作"
+    default: false
+  origessentials.web.player-data:
+    description: "允許讀取玩家資料"
+    default: false
+  origessentials.web.file-management:
+    description: "允許檔案管理"
+    default: false
+  origessentials.web.console:
+    description: "允許主控台指令"
+    default: false
